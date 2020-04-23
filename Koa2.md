@@ -27,6 +27,11 @@
     ```
         cnpm i koa-generic-session koa-redis redis --save
     ```
-- 开发路由
-- 记录日志
+# 10-6 开发路由
+## 路由
+- 复用之前代码，如mysql,登录中间件，controller,model
+- 初始化路由，前端联调
+```
+cnpm i mysql xss --save
+```
 
