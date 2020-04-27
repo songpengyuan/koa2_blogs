@@ -13,7 +13,7 @@ const users = require('./routes/users')
 const blog = require('./routes/blog')
 const user = require('./routes/user')
 
-const {REDIS_CONF} = require('./conf/db')
+const  {REDIS_CONF}  = require('./conf/db')
 
 // error handler
 onerror(app)
@@ -40,7 +40,6 @@ app.use(async (ctx, next) => {
 // session 配置
 app.keys = ['songpengyuan_123']
 
-console.log(REDIS_CONF)
 app.use(session({
   // 配置cookie
   cookie: {

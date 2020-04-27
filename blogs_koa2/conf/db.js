@@ -1,7 +1,7 @@
 /**
  * Created by 87790 on 2020/3/26.
  */
-const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV || 'dev';
 
 let MYSQL_CONF;
 let REDIS_CONF;
@@ -15,7 +15,7 @@ if(env === 'dev'){
         database: 'myblog'
     };
 
-    // reids
+    // redis
     REDIS_CONF = {
         port: 6397,
         host: '127.0.0.1'
@@ -33,7 +33,7 @@ if(env === 'production'){
         //insecureAuth : true
     };
 
-    // reids
+    // redis
     REDIS_CONF = {
         port: 6397,
         host: '127.0.0.1'

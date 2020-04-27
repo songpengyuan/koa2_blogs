@@ -31,7 +31,9 @@ const getDetail = async (id) => {
 }
 
 const newBlog = async (blogData = {})=> {
-    const {title, content, author} = {...blogData};
+    const title = xss(blogData.title)
+    const content = xss(blogData.content)
+    const author = blogData.author
     const createtime = Date.now();
     const sql = `
         insert into blogs (title, content, author, createtime)
@@ -44,8 +46,8 @@ const newBlog = async (blogData = {})=> {
 }
 
 const updateBlog = async (id, blogData = {})=> {
-    console.log('updateBlog...', id, blogData);
-    const {title, content, author} = {...blogData};
+    const title = xss(blogData.title)
+    const content = xss(blogData.content)
     const sql = `
         update blogs set title='${title}', content='${content}' where id = '${id}'
      `
@@ -57,9 +59,6 @@ const updateBlog = async (id, blogData = {})=> {
 }
 
 const delBlog = async (id, author)=> {
-    // id 要删除blog 的ID
-    console.log('delBlog...', id);
-
     const sql = `
         delete from blogs where id = '${id}' and author = '${author}';
      `
