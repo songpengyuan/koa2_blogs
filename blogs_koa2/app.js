@@ -39,6 +39,8 @@ app.use(async (ctx, next) => {
 })
 // session 配置
 app.keys = ['songpengyuan_123']
+
+console.log(REDIS_CONF)
 app.use(session({
   // 配置cookie
   cookie: {
@@ -48,8 +50,8 @@ app.use(session({
   },
   // 配置redis
   store: redisStore({
-    //all: '127.0.0.1:6379' // 临时使用本地 redis
-    all: `${REDIS_CONF.host}:${REDIS_CONF.port}`
+    all: '127.0.0.1:6379' // 临时使用本地 redis
+    //all: `${REDIS_CONF.host}:${REDIS_CONF.port}`
   })
 }))
 
