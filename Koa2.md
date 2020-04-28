@@ -31,8 +31,23 @@
 - 初始化路由，前端联调
 ```
 cnpm i mysql xss --save
-```
 
+```
+# 10-9 日志
+- access log 记录，使用morgan
+```
+    npm i koa-morgan --save
+```
+- 自定义日志使用console.log 和 console.error
+- 日志拆分、日志内存分析
+
+# 10-10 中间件原理分析
+- 洋葱圈模型
+    - Request ---> Response
+- 分析
+    - app.use 用来注册中间件，先收集起来
+    - 实现next机制，即上一个next触发下一个
+    - 不涉及method 和 path 判断
 
 
 # 11-3 进程守护 pm2
